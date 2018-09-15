@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>冒泡过程</title>
+  <style>
+    *{margin: 0;padding: 0;box-sizing: border-box}
+    .red.active{background: red}
+    .yellow.active{background: yellow}
+    .blue.active{background: blue}
+    .green.active{background: green}
+    .purple.active{background: purple}
+    .orange.active{background: orange}
+    div{border: 1px solid black;padding: 10px;
+    transition: all 0.5s;
+    border-radius: 50%;display: flex;
+    flex-grow: 1;
+    }
+    .red{width: 100vh;height: 100vh;}
+    .text{color: #999;display: flex;justify-content: center;align-items: center}
+    .text:hover{cursor: pointer;}
+  </style>
+</head>
+<body>
+  <div class="red">
+    <div class="blue">
+      <div class="yellow">
+        <div class="orange">
+          <div class="green">
+            <div class="purple text">请点我</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="jquery-3.2.1.min.js"></script>
+  <script>
+    var n = 0;
+    $('div').on('click',function(e){
+      setTimeout(function(){
+        $(e.currentTarget).addClass('active')
+      },n*500)
+      n+=1
+    })
+  </script>
+</body>
+</html>
